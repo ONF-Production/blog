@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '' # poner la clave secreta
+SECRET_KEY = 'django-insecure-z-vmldr+l)d1z$201%-hs^jnnc20%muajmj5-dyvt6s)5ogemw' # poner la clave secreta
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True 
@@ -53,10 +53,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'casArbol.urls'
 
+TEMPLATE_DIR = os.path.join(os.path.dirname(BASE_DIR),'template')
+TEMPLATE_NOTICIAS = os.path.join(os.path.dirname(BASE_DIR),'template/noticias')
+TEMPLATE_EVENTOS = os.path.join(os.path.dirname(BASE_DIR),'template/eventos')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(BASE_DIR), 'template')],
+        'DIRS': [TEMPLATE_DIR,TEMPLATE_NOTICIAS,TEMPLATE_EVENTOS],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

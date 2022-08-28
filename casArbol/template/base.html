@@ -1,12 +1,83 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base</title>
-</head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Blog | Casita Del Arbol</title>
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ 
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--Favicom -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicom/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicom/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicom/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'img/favicom/site.webmanifest' %}">
+  <link rel="mask-icon" href="{% static 'img/favicom/safari-pinned-tab.svg' %}" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+
+  </head>
 <body>
-    
-</body>
+  <!-- Menu de Navegación -->
+  <nav class="#00796b teal darken-2  " role="navigation">
+    <div class="nav-wrapper container nav">
+
+      <a id="logo-container" href="#" class="brand-logo l">
+        <i class="materialize-icons" width="6" height="6">
+          <img  class="pequeña" src="{% static 'img/casitaconmanos.jpg' %}" name="CasitaDelArbol">
+        </i>
+        
+      </a>
+      <a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'index' %}" >Inicio</a></li>
+        <li><a href="{% url 'nosotros' %}" >Quiénes Somos</a></li>
+        <li><a href="{% url 'noticias' %}" >Noticias</a></li>
+        <li><a href="#" >Evento</a></li>
+        <li><a href="#" >Contacto</a></li>
+        <li><a href="#" >Donar</a></li>
+        <li><a class="waves-effect waves-light btn">Iniciar Sesión</a></li>
+      </ul>
+
+      <ul id="mobile-links" class="sidenav">
+        <li><a href="{% url 'index' %}" >Inicio</a></li>
+        <li><a href="{% url 'nosotros' %}" >Quiénes Somos</a></li>
+        <li><a href="{% url 'noticias' %}" >Noticias</a></li>
+        <li><a href="#" >Evento</a></li>
+        <li><a href="#" >Contacto</a></li>
+        <li><a href="#" >Donar</a></li>
+        <li><a class="waves-effect waves-light btn">Iniciar Sesión</a></li>
+      </ul>
+     
+  </nav>
+  {% block contenido %}
+
+  {% endblock %}
+ 
+  <footer class="page-footer #00796b teal darken-2 ">
+     <div class="footer-copyright">
+      <div class="container center text-alin-">
+      &copf; Fundación Casita Del Arbol - 2022
+      </div>
+    </div>
+  </footer>
+   
+ 
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
 </html>
