@@ -3,19 +3,22 @@
 {% block contenido %}
 
 {% for noticia in noticias %}
-<hr class="featurette-divider">
-<div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading #e3f2fd blue lighten-5" >{{noticia.titulo}}</h2>
-    <p class="lead">{{noticia.contenido}}</p>
+<div class="container">
+    <hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading #e3f2fd blue lighten-5 center" >{{noticia.titulo}}</h2>
+      <p class="lead">{{noticia.contenido}}</p>
+    </div>
+    <div class="col-md-5">
+      <img src="{{noticia.img.url}}" alt="">
+    </div>
+    <p><a class="btn btn-secondary center" href="{% url 'noticiasdetalle' id=noticia.id %}">Leer más &raquo;</a></p>
   </div>
-  <div class="col-md-5">
-    <img src="{{noticia.img.url}}" alt="">
-  </div>
-  <p><a class="btn btn-secondary" href="{% url 'noticiasdetalle' id=noticia.id %}">Leer más &raquo;</a></p>
+
+  <hr class="featurette-divider">
 </div>
 
-<hr class="featurette-divider">
 {% endfor %}
 
 

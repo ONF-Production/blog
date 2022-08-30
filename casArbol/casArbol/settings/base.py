@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.noticia',
+    'apps.registro',
 ]
 
 MIDDLEWARE = [
@@ -56,11 +57,12 @@ ROOT_URLCONF = 'casArbol.urls'
 TEMPLATE_DIR = os.path.join(os.path.dirname(BASE_DIR),'template')
 TEMPLATE_NOTICIAS = os.path.join(os.path.dirname(BASE_DIR),'template/noticias')
 TEMPLATE_EVENTOS = os.path.join(os.path.dirname(BASE_DIR),'template/eventos')
+TEMPLATE_REGISTRO = os.path.join(os.path.dirname(BASE_DIR),'template/registro')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,TEMPLATE_NOTICIAS,TEMPLATE_EVENTOS],
+        'DIRS': [TEMPLATE_DIR,TEMPLATE_NOTICIAS,TEMPLATE_EVENTOS, TEMPLATE_REGISTRO],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,3 +133,7 @@ MEDIA_ROOT =   os.path.join(os.path.dirname(BASE_DIR), 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL ='/'
+LOGOUT_REDIRECT_URL = '/'
