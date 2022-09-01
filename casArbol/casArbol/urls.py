@@ -20,13 +20,16 @@ from django.conf.urls.static import static
 from django.conf import settings
 from apps.noticia import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    
     path('nosotros', views.nosotros, name='nosotros'),
     url('noticias/', include('apps.noticia.urls')),
     path('noticias', views.noticias, name='noticias'),
     path('registro/', include('apps.registro.urls')),
+    path('admini/', include('apps.admini.urls')),
     #url('noticias/<int:id>/', views.noticiasdetalle, name='noticiasdetalle')
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT,show_indexes=True) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT,show_indexes=True)
 

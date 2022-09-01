@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.noticia',
     'apps.registro',
+    'apps.admini',
 ]
 
 MIDDLEWARE = [
@@ -58,11 +59,12 @@ TEMPLATE_DIR = os.path.join(os.path.dirname(BASE_DIR),'template')
 TEMPLATE_NOTICIAS = os.path.join(os.path.dirname(BASE_DIR),'template/noticias')
 TEMPLATE_EVENTOS = os.path.join(os.path.dirname(BASE_DIR),'template/eventos')
 TEMPLATE_REGISTRO = os.path.join(os.path.dirname(BASE_DIR),'template/registro')
+TEMPLATE_ADMINI = os.path.join(os.path.dirname(BASE_DIR),'template/admini')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,TEMPLATE_NOTICIAS,TEMPLATE_EVENTOS, TEMPLATE_REGISTRO],
+        'DIRS': [TEMPLATE_DIR,TEMPLATE_NOTICIAS,TEMPLATE_EVENTOS, TEMPLATE_REGISTRO, TEMPLATE_ADMINI],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
