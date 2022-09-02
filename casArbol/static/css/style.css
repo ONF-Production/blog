@@ -5,6 +5,16 @@
  *
  * Made By MaterializeCSS.com
  */
+ 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
 
 img.pequeña{
   width: 50px;
@@ -53,4 +63,3 @@ img.grande{
 	margin: 0 15px;
 	background: 35221c;
 }
-
