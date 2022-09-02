@@ -39,5 +39,15 @@ class Comentarios(models.Model):
         self.aprobado = True
         self.save()
 
+class Evento(models.Model):
+    nombre = models.CharField(max_length=100)
+    tema = models.CharField(max_length=100)
+    texto = models.TextField()
+    imag = models.ImageField(null=True, blank=True, upload_to='img/evento',help_text="Seleccione una imagen para mostrar")
+    fecha = models.DateField()
+    fecha_public = models.DateTimeField(blank=True, null=True)
     
+    def publicarEvento(self):
+        self.publicado = datetime.now()
+        self.save()
 

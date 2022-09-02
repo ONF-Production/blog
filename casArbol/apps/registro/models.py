@@ -10,6 +10,7 @@ class Profile(models.Model):
     resume = models.CharField(max_length=255, blank=True)
     usr_twitter = models.URLField(blank=True)
     usr_instagram = models.URLField(blank=True)
+    cargo = models.BooleanField(default=False)
 
     def __str__(self):
         return self.usuario.username
