@@ -1,6 +1,6 @@
 from time import timezone
 from django.shortcuts import render, redirect
-from .models import Noticia,Categoria,Comentarios
+from .models import Evento, Noticia, Categoria,Comentarios
 from django.http.response import Http404
 from django.conf import settings
 #from django.http import HttpResponse
@@ -111,3 +111,19 @@ def comment_remove(request, id):
     noticia_id = comentario.noticia.id
     comentario.delete()
     return redirect('noticia_detalle', id=noticia_id)
+
+def noticias(request):
+    lista_noticias = Noticia.objects.all().order_by('creado')
+    context = {
+        "noticias": lista_noticias,
+        "MEDIA_ROOT": 'media/img/noticias/'
+    }
+    return render(request, 'noticias.html',context)
+
+def evento(request):
+    lista_evento = Evento.objects.all()
+    context = {
+        "evento": lista_evento,
+        "MEDIA_ROOT": 'media/img/eventos/'
+    }
+    return render(request, 'eventos.html',context)
