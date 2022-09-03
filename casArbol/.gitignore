@@ -1,6 +1,8 @@
 casArbol/settings/local.py
 # Byte-compiled / optimized / DLL files
-
+base.py
+local.py
+db.sqlite3
 __pycache__/
 *.py[cod]
 *$py.class
